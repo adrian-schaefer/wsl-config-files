@@ -13,17 +13,17 @@ alias burpsuited='burpsuite >/dev/null 2>&1 &'
 
 function infoPorts()  
 {  
-&emsp;        ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"  
-&emsp;        ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"  
-&emsp;        echo -e "\n[*] Extracting information...\n" > infoPorts.tmp  
-&emsp;        echo -e "\t[*] IP Address: $ip_address"  >> infoPorts.tmp  
-&emsp;        echo -e "\t[*] Open ports: $ports\n"  >> infoPorts.tmp  
-&emsp;        cat infoPorts.tmp; rm infoPorts.tmp  
+        ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"  
+        ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"  
+        echo -e "\n[*] Extracting information...\n" > infoPorts.tmp  
+        echo -e "\t[*] IP Address: $ip_address"  >> infoPorts.tmp  
+        echo -e "\t[*] Open ports: $ports\n"  >> infoPorts.tmp  
+        cat infoPorts.tmp; rm infoPorts.tmp  
 }  
 
 function mkt()  
 {  
-&emsp;        mkdir {nmap,content,exploits}  
+        mkdir {nmap,content,exploits}  
 }  
 
 ### .tmux.conf
