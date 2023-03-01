@@ -27,3 +27,6 @@ function mkt()
 }  
 
 ### .tmux.conf
+set -g mouse on
+set-option -g history-limit 9000
+set-option -g allow-rename off
